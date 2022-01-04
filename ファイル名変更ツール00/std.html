@@ -18,7 +18,10 @@
     </p>
     <div id="ZoneDrug">
         <p>ここにファイルをドラッグ</p>
-
+    </div>
+    <p></p>
+    <div class="">
+      <input type="file" id="SelectDir" name="" value="" webkitdirectory>
     </div>
 
     <div class="ZoneDebug">
@@ -33,40 +36,14 @@
         </p>
     </div>
 
-    <script type="text/javascript">
-        let zoneFile = document.getElementById('ZoneDrug');
-        // ドラッグオーバー時の処理
-        fileArea.addEventListener('dragover', function(e) {
-            e.preventDefault();
-            fileArea.classList.add('dragover');
-        });
+    <select name="name" id="sampleSelect">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
 
-        // ドラッグアウト時の処理
-        fileArea.addEventListener('dragleave', function(e) {
-            e.preventDefault();
-            fileArea.classList.remove('dragover');
-        });
-
-        // ドロップ時の処理
-        fileArea.addEventListener('drop', function(e) {
-            e.preventDefault();
-            fileArea.classList.remove('dragover');
-
-            // ドロップしたファイルの取得
-            var files = e.dataTransfer.files;
-
-            // 取得したファイルをinput[type=file]へ
-            //fileInput.files = files;
-
-            if (typeof files[0] !== 'undefined') {
-                alert(files[0]);
-                //ファイルが正常に受け取れた際の処理
-            } else {
-                //ファイルが受け取れなかった際の処理
-            }
-        });
-    </script>
-
+    <!-- <script type="text/javascript"> -->
+    <script type="text/javascript" src="std.js"></script>
 </body>
 
 </html>
